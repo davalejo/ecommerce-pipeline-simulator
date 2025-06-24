@@ -28,11 +28,11 @@ jobs:
     # Paso 3: Construir y levantar servicios con Docker Compose
     - name: Construir y levantar servicios con Docker Compose
       run: |
-        cd deploy/docker
+        cd deploy/docker-compose
         docker-compose up -d --build
 
-    # Paso 4: Ejecututar pruebas unitarias
-    - name: Ejecututar pruebas unitarias
+    # Paso 4: Ejecutar pruebas unitarias (simuladas)
+    - name: Ejecutar pruebas unitarias
       run: echo "Aquí se ejecutarían pruebas con npm, pytest, etc."
 
     # Paso 5: Verificar servicios en ejecución
@@ -43,5 +43,5 @@ jobs:
     - name: Detener y eliminar contenedores
       if: always()
       run: |
-        cd deploy/docker
+        cd deploy/docker-compose
         docker-compose down
